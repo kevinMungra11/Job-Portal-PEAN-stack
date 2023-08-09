@@ -1,0 +1,139 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <div class="card p-4 apply-form-container">
+        <form
+          [formGroup]="applyForm"
+          (ngSubmit)="onSubmit()"
+          enctype="multipart/form-data"
+        >
+          <div class="form-group">
+            <label for="work-experience">Work Experience:</label>
+            <textarea
+              class="form-control"
+              id="work-experience"
+              rows="3"
+              formControlName="workExperience"
+              [ngClass]="{
+                'is-invalid':
+                  applyForm.get('workExperience')?.invalid &&
+                  applyForm.get('workExperience')?.touched
+              }"
+            >
+            </textarea>
+            <div
+              class="invalid-feedback"
+              *ngIf="
+                applyForm.get('workExperience')?.invalid &&
+                applyForm.get('workExperience')?.touched
+              "
+            >
+              Work experience is required.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="skills">Skills:</label>
+            <textarea
+              class="form-control"
+              id="skills"
+              rows="3"
+              formControlName="skills"
+              [ngClass]="{
+                'is-invalid':
+                  applyForm.get('skills')?.invalid &&
+                  applyForm.get('skills')?.touched
+              }"
+            >
+            </textarea>
+            <div
+              class="invalid-feedback"
+              *ngIf="
+                applyForm.get('skills')?.invalid &&
+                applyForm.get('skills')?.touched
+              "
+            >
+              Skills are required.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="resume">Resume:</label>
+            <input
+              type="file"
+              class="form-control-file"
+              id="resume"
+              formControlName="resume"
+              (change)="onFileSelected('resume', $event)"
+              name="resume"
+              accept=".pdf"
+              [ngClass]="{
+                'is-invalid':
+                  applyForm.get('resume')?.invalid &&
+                  applyForm.get('resume')?.touched
+              }"
+            />
+            <div
+              class="invalid-feedback"
+              *ngIf="
+                applyForm.get('resume')?.invalid &&
+                applyForm.get('resume')?.touched
+              "
+            >
+              Only PDF files are allowed.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cover-letter">Cover Letter:</label>
+            <input
+              type="file"
+              class="form-control-file"
+              id="cover-letter"
+              (change)="onFileSelected('coverLetter', $event)"
+              formControlName="coverLetter"
+              accept=".pdf"
+              [ngClass]="{
+                'is-invalid':
+                  applyForm.get('coverLetter')?.invalid &&
+                  applyForm.get('coverLetter')?.touched
+              }"
+            />
+            <div
+              class="invalid-feedback"
+              *ngIf="
+                applyForm.get('coverLetter')?.invalid &&
+                applyForm.get('coverLetter')?.touched
+              "
+            >
+              Only PDF files are allowed.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="experience-letter">Experience Letter:</label>
+            <input
+              type="file"
+              class="form-control-file"
+              id="experience-letter"
+              (change)="onFileSelected('experienceLetter', $event)"
+              formControlName="experienceLetter"
+              accept=".pdf"
+              [ngClass]="{
+                'is-invalid':
+                  applyForm.get('experienceLetter')?.invalid &&
+                  applyForm.get('experienceLetter')?.touched
+              }"
+            />
+            <div
+              class="invalid-feedback"
+              *ngIf="
+                applyForm.get('experienceLetter')?.invalid &&
+                applyForm.get('experienceLetter')?.touched
+              "
+            >
+              Only PDF files are allowed.
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

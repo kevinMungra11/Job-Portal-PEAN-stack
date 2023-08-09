@@ -1,0 +1,29 @@
+<div class="style">
+    <div class="text">
+        Featured Jobs
+    </div>
+    <div class="my-card">
+        <div class="card" *ngFor="let job of jobDetails;">
+            <div class="card-header">
+                <div class="image"><i class="fa-solid fa-briefcase fa-2x"></i></div>
+                <div class="job-type">Full time</div>
+            </div>
+            <div class="card-mid-part">
+                <div class="card-title">
+                    {{ job.job_designation }}
+                </div>
+                <div class="card-location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    {{job.location}}
+                </div>
+                <div class="card-details">
+                    {{ job.description.length>90? job.description.substring(0,70)+'...more' : job.description }}
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-color" (click)="handleClickApply(job)">Apply</button>
+                <button class="btn btn-color" (click)="handleClickDetail(job)">Detail</button>
+            </div>
+        </div>
+    </div>
+</div>

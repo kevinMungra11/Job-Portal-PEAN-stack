@@ -1,0 +1,64 @@
+.apply-form-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    margin: 50px auto;
+    max-width: 800px;
+}
+
+.apply-form-container h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.apply-form-container label {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #555;
+    display: block;
+    margin-top: 10px;
+}
+
+.apply-form-container input[type="text"],
+.apply-form-container select {
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+.apply-form-container .custom-file-label::after {
+    content: "Choose file...";
+    display: inline-block;
+    background: #eee;
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: #555;
+}
+
+.apply-form-container .custom-file:hover .custom-file-label::after {
+    cursor: pointer;
+    background: #ddd;
+}
+
+.apply-form-container button[type="submit"] {
+    font-size: 20px;
+    padding: 10px 20px;
+    background: #2C3E50;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.apply-form-container button[type="submit"]:hover {
+    background: #1E344E;
+}
+
+.apply-form-container .alert {
+    margin-top: 20px;
+}

@@ -1,0 +1,113 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">Company Job Form</div>
+        <div class="card-body">
+          <form [formGroup]="companyForm" (ngSubmit)="onSubmit()" required>
+            <div class="form-group">
+              <label for="companyName">Company Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="companyName"
+                formControlName="companyName"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="aboutCompany">About Company</label>
+              <textarea
+                class="form-control"
+                id="aboutCompany"
+                formControlName="aboutCompany"
+                required
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="CEO">CEO</label>
+              <input
+                type="text"
+                class="form-control"
+                id="CEO"
+                formControlName="CEO"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="numberOfEmployee">Number of Employees</label>
+              <input
+                type="number"
+                class="form-control"
+                id="numberOfEmployee"
+                formControlName="numberOfEmployee"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="companyAddress">Company Address</label>
+              <input
+                type="text"
+                class="form-control"
+                id="companyAddress"
+                formControlName="companyAddress"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="revenue">Revenue</label>
+              <input
+                type="text"
+                class="form-control"
+                id="revenue"
+                formControlName="revenue"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="headquarter">Headquarter</label>
+              <input
+                type="text"
+                class="form-control"
+                id="headquarter"
+                formControlName="headquarter"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="officialWebsite">Official Website</label>
+              <input
+                type="text"
+                class="form-control"
+                id="officialWebsite"
+                formControlName="officialWebsite"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                formControlName="email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="dateOfFoundation">Date of Foundation</label>
+              <input
+                type="date"
+                class="form-control"
+                id="dateOfFoundation"
+                formControlName="dateOfFoundation"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,172 @@
+<!-- signup.component.html -->
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="firstName"
+                id="firstName"
+                [ngClass]="{
+                  'is-invalid':
+                    signupForm.get('firstName')?.touched &&
+                    signupForm.get('firstName')?.invalid
+                }"
+              />
+              <div
+                class="invalid-feedback"
+                *ngIf="
+                  signupForm.get('firstName')?.touched &&
+                  signupForm.get('firstName')?.invalid
+                "
+              >
+                First Name is required.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="lastName"
+                id="lastName"
+                [ngClass]="{
+                  'is-invalid':
+                    signupForm.get('lastName')?.touched &&
+                    signupForm.get('lastName')?.invalid
+                }"
+              />
+              <div
+                class="invalid-feedback"
+                *ngIf="
+                  signupForm.get('lastName')?.touched &&
+                  signupForm.get('lastName')?.invalid
+                "
+              >
+                Last Name is required.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="userName">Username</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="userName"
+                id="username"
+              />
+            </div>
+            <div class="form-group">
+              <label for="header">Header</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="header"
+                id="title"
+              />
+            </div>
+            <div class="form-group">
+              <label for="bio">Bio</label>
+              <textarea
+                class="form-control"
+                formControlName="bio"
+                id="bio"
+                rows="3"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select class="form-control" formControlName="gender" id="gender">
+                <option value="">-- Select Gender --</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input
+                type="email"
+                class="form-control"
+                formControlName="email"
+                id="email"
+                [ngClass]="{
+                  'is-invalid':
+                    signupForm.get('email')?.touched &&
+                    signupForm.get('email')?.invalid
+                }"
+              />
+              <div
+                class="invalid-feedback"
+                *ngIf="
+                  signupForm.get('email')?.touched &&
+                  signupForm.get('email')?.invalid
+                "
+              >
+                Please enter a valid email address.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password">Password *</label>
+              <input
+                type="password"
+                class="form-control"
+                formControlName="password"
+                id="password"
+                [ngClass]="{
+                  'is-invalid':
+                    signupForm.get('password')?.touched &&
+                    signupForm.get('password')?.invalid
+                }"
+              />
+              <div
+                class="invalid-feedback"
+                *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid && !signupForm.get('password')?.errors?.['minlength']"
+              >
+                Password is required.
+              </div>
+              <div
+                class="invalid-feedback"
+                *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.errors?.['minlength']"
+              >
+                Password should be at least 8 characters long.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password *</label>
+              <input
+                type="password"
+                class="form-control"
+                formControlName="confirmPassword"
+                id="confirmPassword"
+                [ngClass]="{
+                  'is-invalid':
+                    signupForm.get('confirmPassword')?.touched &&
+                    signupForm.get('confirmPassword')?.invalid
+                }"
+              />
+              <div
+                class="invalid-feedback"
+                *ngIf="signupForm.get('confirmPassword')?.touched && !signupForm.get('confirmPassword')?.errors?.['required'] && signupForm.get('confirmPassword')?.invalid"
+              >
+                Passwords do not match.
+              </div>
+              <div
+                class="invalid-feedback"
+                *ngIf="signupForm.get('confirmPassword')?.touched && signupForm.get('confirmPassword')?.errors?.['required']"
+              >
+                Confirm Password is required.
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary mt-4">Sign up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

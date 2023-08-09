@@ -1,0 +1,11 @@
+<div class="backGround" *ngFor="let job of jobList">
+    <div id="content-container">
+        <div id="apllied">Applied Jobs</div>
+        <div class="card">
+            <div class="title">{{job.job_designation}}</div>
+            <div class="content">{{job.description.length>90? job.description.substring(0,70)+'...more' :
+                job.description}}</div>
+            <div><button (click)="onClick(job)">View</button></div>
+        </div>
+    </div>
+</div>

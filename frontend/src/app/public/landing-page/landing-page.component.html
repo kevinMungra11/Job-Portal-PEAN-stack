@@ -1,0 +1,24 @@
+<div class="style">
+    <div class="items">
+        <div class="div-texts">
+            <div class="header">
+                Grow With Us and Build Your Carrier
+            </div>
+            <div class="text">
+                Good life begins with a good company. Let's create a
+                better future by looking for jobs here.
+            </div>
+            <div class="button">
+                <button class="btn-1" *ngIf="!isSignedIn()" (click)="handleClick()">Find a Job</button>
+                <button class="btn-2" *ngIf="!isSignedIn()" (click)="handleClick()">Offer a Job</button>
+            </div>
+        </div>
+        <div class="image">
+        </div>
+    </div>
+    <div class="company-list">
+        <div class="company-image"></div>
+        <div class="company-image"></div>
+        <div class="company-image"></div>
+    </div>
+</div>

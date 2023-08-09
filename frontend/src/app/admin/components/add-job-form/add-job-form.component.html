@@ -1,0 +1,63 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="jobDesignation">Job Designation</label>
+          <input type="text" class="form-control" formControlName="jobDesignation" id="jobDesignation" />
+        </div>
+        <div class="form-group">
+          <label for="header">Header</label>
+          <input type="text" class="form-control" formControlName="header" id="header" />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea class="form-control" formControlName="description" id="description"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" class="form-control" formControlName="location" id="location" />
+        </div>
+        <div class="form-group">
+          <label for="salaryAndBenefits">Salary and Benefits</label>
+          <textarea class="form-control" formControlName="salaryAndBenefits" id="salaryAndBenefits"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="applicationInstruction">Application Instruction</label>
+          <textarea class="form-control" formControlName="applicationInstruction"
+            id="applicationInstruction"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="companyInfo">Company Info</label>
+          <select class="form-control" formControlName="companyInfo" id="companyInfo">
+            <option value="{{ company.id }}" *ngFor="let company of companyList">
+              {{ company.company_name }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="jobType">Job Type</label>
+          <select class="form-control" formControlName="jobType" id="jobType">
+            <option></option>
+            <option value="Full time">Full Time</option>
+            <option value="Part time">Part Time</option>
+            <option value="Contract based">Contract Based</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="experienceLevel">Experience Level</label>
+          <input type="text" class="form-control" formControlName="experienceLevel" id="experienceLevel" />
+        </div>
+        <div class="form-group">
+          <label for="educationRequirement">Education Requirement</label>
+          <input type="text" class="form-control" formControlName="educationRequirement" id="educationRequirement" />
+        </div>
+        <div class="form-group">
+          <label for="skillsRequirement">Skills Requirement</label>
+          <input type="text" class="form-control" formControlName="skillsRequirement" id="skillsRequirement" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

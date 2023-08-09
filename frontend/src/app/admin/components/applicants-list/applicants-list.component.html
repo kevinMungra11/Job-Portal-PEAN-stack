@@ -1,0 +1,17 @@
+<div class="container my-4">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <div class="col" *ngFor="let applicant of applicants">
+      <div *ngIf="applicant.Job_Infos.length!==0;" class="card bg-light border-0 shadow-sm"
+        style="width: 250px; height: 300px;">
+        <div class="card-body">
+          <h5 class="card-title mb-3 text-center" style="font-size: 1.2rem;">{{applicant.user_name}}</h5>
+          <p class="card-text"><strong>Email:</strong> {{applicant.email}}</p>
+          <p class="card-text"><strong>First Name:</strong> {{applicant.first_name}}</p>
+          <p class="card-text"><strong>Last Name:</strong> {{applicant.last_name}}</p>
+          <p class="card-text"><strong>Username:</strong> {{applicant.user_name}}</p>
+          <button class="btn btn-primary btn-sm btn-block" (click)="onSubmit(applicant)">Total Jobs Applied</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
